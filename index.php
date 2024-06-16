@@ -1,6 +1,6 @@
 <?php
     require_once('./vendor/autoload.php');
-    require_once('./src/api/sendToAmoCRM.php');
+    //require_once('./src/api/sendToAmoCRM.php');
 ?>
 
 <!doctype html>
