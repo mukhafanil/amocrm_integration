@@ -2,3 +2,4 @@
 .lando.yml
 /vendor/
 /config/
+*.env

@@ -1,0 +1,21 @@
+{
+    "name": "fanil/amocrm",
+    "require": {
+        "amocrm/amocrm-api-library": "^1.9",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fanil\\Amocrm\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mukhafanil",
+            "email": "68975294+mukhafanil@users.noreply.github.com"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^5.4"
+    }
+}
