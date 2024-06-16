@@ -1,4 +1,77 @@
 @import "reset.css";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "fonts.css";
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-size: 20px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+}
+
+button {
+  display: block;
+  padding: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button {
+  width: 235px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ff0000;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+.modal-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+}
+.modal-close .modal-close__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.modal {
+  display: none;
+  width: 400px;
+  height: 400px;
+  background: #333;
+  color: #fff;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.modal .modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.modal2 {
+  right: auto;
+}
 
 /*# sourceMappingURL=style.css.map */
