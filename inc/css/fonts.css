@@ -8,6 +8,13 @@
 @font-face {
     font-family: "Montserrat", sans-serif;
     font-style: normal;
+    font-weight: 500;
+    src: local("Montserrat"),
+        url("/inc/fonts/montserrat/Montserrat-Medium.ttf") format("ttf");
+}
+@font-face {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
     font-weight: 700;
     src: local("Montserrat"),
         url("/inc/fonts/montserrat/Montserrat-Bold.ttf") format("ttf");

@@ -5,7 +5,9 @@
 }
 
 body {
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 1.2188888889;
+  color: #333;
 }
 
 main {
@@ -52,11 +54,13 @@ button {
 }
 
 .modal {
-  display: none;
-  width: 400px;
-  height: 400px;
-  background: #333;
-  color: #fff;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  background: #d5d5d5;
+  color: #333;
+  border-radius: 20px;
   margin: auto;
   position: fixed;
   top: 0;
@@ -69,9 +73,69 @@ button {
   top: 14px;
   right: 14px;
 }
+.modal .modal__title {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.4117647059;
+  color: #333;
+}
 
-.modal2 {
-  right: auto;
+.discount {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  max-height: 570px;
+  padding: 33px 48px 37px 43px;
+  background: url("/inc/img/modal-bg.jpg") no-repeat center center;
+  background-size: cover;
+}
+.discount .discount__title-text1 {
+  color: #924CCE;
+}
+.discount .discount__puncts {
+  margin-top: 24px;
+}
+.discount .discount__body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 43px;
+  margin-top: 24px;
+}
+.discount .discount__right {
+  width: 100%;
+  max-width: 413px;
+}
+.discount .discount__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 26px;
+}
+
+.puncts {
+  font-size: 18px;
+}
+.puncts .puncts__title {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.puncts .puncts__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 14px;
+}
+.puncts .puncts__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+.puncts .puncts__icon {
+  display: block;
+  width: 26px;
+  height: 26px;
 }
 
 /*# sourceMappingURL=style.css.map */

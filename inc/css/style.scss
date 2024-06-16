@@ -5,7 +5,9 @@
     font-family: "Montserrat", sans-serif;
 }
 body {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.218888888888889;
+    color: #333;
 }
 main {
     display: flex;
@@ -53,11 +55,14 @@ button {
     }
 }
 .modal {
-    display: none;
-    width: 400px;
-    height: 400px;
-    background: #333;
-    color: #fff;
+    //display: none;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    background: #d5d5d5;
+    color: #333;
+    border-radius: 20px;
 
     margin: auto;
     position: fixed;
@@ -71,7 +76,76 @@ button {
         top: 14px;
         right: 14px;
     }
+    & &__title {
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 1.411764705882353;
+        color: #333;
+    }
 }
-.modal2 {
-    right: auto;
+
+.discount {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 570px;
+
+    padding: 33px 48px 37px 43px;
+    background: url("/inc/img/modal-bg.jpg") no-repeat center center;
+    background-size: cover;
+
+    & &__title {
+        &-text1 {
+            color: #924CCE;
+        }
+    }
+    & &__puncts {
+        margin-top: 24px;
+    }
+    & &__body {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 43px;
+        margin-top: 24px;
+    }
+    & &__left {}
+    & &__right {
+        width: 100%;
+        max-width: 413px;
+    }
+    & &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 26px;
+    }
+}
+
+.puncts {
+    font-size: 18px;
+
+    & &__title {
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    & &__list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 14px;
+    }
+
+    & &__item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 12px;
+    }
+    & &__icon {
+        display: block;
+        width: 26px;
+        height: 26px;
+    }
+    & &__text {}
 }

@@ -36,4 +36,3 @@ function fadeOut (element, duration = 400) {
         element.style.display = 'none';
     }, duration);
 }
-
