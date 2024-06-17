@@ -34,10 +34,14 @@ button {
   height: 70px;
   margin-left: auto;
   margin-right: auto;
-  background: #ff0000;
-  color: #fff;
   border-radius: 4px;
   font-size: 18px;
+  transition: 0.3s ease;
+  background: #ff0000;
+  color: #fff;
+}
+.button:hover {
+  background: #cb0000;
 }
 
 .modal-close {
@@ -48,11 +52,15 @@ button {
   height: 50px;
   border-radius: 50%;
   background: #fff;
+  transition: 0.3s ease;
 }
 .modal-close .modal-close__icon {
   display: block;
   width: 20px;
   height: 20px;
+}
+.modal-close:hover {
+  background: rgba(255, 171, 213, 0.6392156863);
 }
 
 .modal {
@@ -77,8 +85,8 @@ button {
 }
 .modal .modal__container {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
   max-width: 400px;
   max-height: 400px;
   background: #d5d5d5;
@@ -105,8 +113,8 @@ button {
 }
 
 .discount {
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
   max-width: 1000px !important;
   max-height: 570px !important;
   padding: 33px 48px 37px 43px;
@@ -241,6 +249,11 @@ button {
   line-height: 1.0909090909;
   text-align: center;
   color: #fff;
+  transition: 0.3s ease;
+  opacity: 1;
+}
+.form .form__submit:hover {
+  opacity: 0.9;
 }
 .form .form__checkbox-wrap {
   margin-top: 9px;

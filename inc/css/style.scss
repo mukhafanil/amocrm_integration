@@ -1,6 +1,14 @@
 @import "reset.css";
 @import "fonts.css";
 
+// Breakpoints
+$laptopPlus: 'max-width: 1599px' !global;
+$laptop: 'max-width: 1399px' !global;
+$tabletPlus: 'max-width: 1199px' !global;
+$tablet: 'max-width: 991px' !global;
+$mobilePlus: 'max-width: 767px' !global;
+$mobile: 'max-width: 575px' !global;
+
 * {
     font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
@@ -33,10 +41,15 @@ button {
     margin-left: auto;
     margin-right: auto;
 
-    background: #ff0000;
-    color: #fff;
     border-radius: 4px;
     font-size: 18px;
+    transition: 0.3s ease;
+    background: #ff0000;
+    color: #fff;
+
+    &:hover {
+        background: #cb0000;
+    }
 }
 
 .modal-close {
@@ -48,11 +61,16 @@ button {
 
     border-radius: 50%;
     background: #fff;
+    transition: 0.3s ease;
 
     & &__icon {
         display: block;
         width: 20px;
         height: 20px;
+    }
+
+    &:hover {
+        background: #ffabd5a3;
     }
 }
 .modal {
@@ -78,8 +96,8 @@ button {
     }
     & &__container {
         display: block;
-        width: 100%;
-        height: 100%;
+        width: calc(100% - 60px);
+        height: calc(100% - 60px);
         max-width: 400px;
         max-height: 400px;
         background: #d5d5d5;
@@ -108,14 +126,18 @@ button {
 }
 
 .discount {
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
     max-width: 1000px !important;
     max-height: 570px !important;
 
     padding: 33px 48px 37px 43px;
     background: url("/inc/img/modal-bg.jpg") no-repeat center center !important;
     background-size: cover !important;
+
+    @media ($tabletPlus) {
+
+    }
 
     & &__title {
         &-text1 {
@@ -261,6 +283,11 @@ button {
         line-height: 1.090909090909091;
         text-align: center;
         color: #fff;
+        transition: 0.3s ease;
+        opacity: 1;
+        &:hover {
+            opacity: 0.9;
+        }
     }
     & &__checkbox-wrap {
         margin-top: 9px;
