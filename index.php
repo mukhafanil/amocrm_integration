@@ -53,7 +53,7 @@
                             <button class="form__submit" type="submit">Получить купон на скидку</button>
 
                             <div class="form__checkbox-wrap">
-                                <input type="checkbox" class="custom-checkbox" id="checkboxPolitics" name="politics" value="yes" checked>
+                                <input type="checkbox" class="custom-checkbox" id="checkboxPolitics" name="politics" value="yes" checked required>
                                 <label for="checkboxPolitics"><span>Я даю согласие на обработку <a href="#" target="_blank">персональных данных</a></span></label>
                             </div>
                         </form>
@@ -62,9 +62,23 @@
                         <img class="discount__image" src="./inc/img/discount.jpg" alt="discount">
                         <div class="discount__counter">
                             <img class="discount__counter-icon" src="./inc/img/people.png" alt="icon">
-                            <span class="discount__counter-text" >Уже получили <span class="discount__counter-value">1033</span></span>
+                            <span class="discount__counter-text">Уже получили <span class="discount__counter-value">1033</span></span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="successForm">
+            <div class="modal__bg"></div>
+            <div class="modal__container success-form">
+                <button class="modal__close modal-close">
+                    <svg class="modal-close__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.00006 1L19 18.9999M18.9999 1L1 18.9999" stroke="#FF1B88" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="modal__title success-form__title">
+                    Заявка успешно отправлена!
                 </div>
             </div>
         </div>

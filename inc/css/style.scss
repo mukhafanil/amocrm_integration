@@ -179,6 +179,20 @@ button {
         margin-top: 30px;
     }
 }
+.success-form {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    max-height: 250px !important;
+    padding: 40px;
+    background: url("/inc/img/modal-bg.jpg") no-repeat center center !important;
+    background-size: cover !important;
+    & &__title {
+        font-size: 30px;
+        line-height: 1.2;
+        text-align: center;
+    }
+}
 
 .puncts {
     font-size: 18px;

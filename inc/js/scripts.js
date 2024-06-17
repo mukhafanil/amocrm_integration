@@ -67,11 +67,23 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 if (data.success) {
                     console.log('Лид успешно отправлен!');
+                    resultSuccess();
                 } else {
                     console.log('Ошибка при отправке лида.', data);
                 }
             })
             .catch(error => console.error('Ошибка:', error));
     });
+
+    function resultSuccess() {
+        discountForm.reset();
+
+        const discountModal = document.querySelector('#discountModal');
+        setTimeout(() => fadeOut(discountModal), 200);
+
+        const successModal = document.querySelector('#successForm');
+        fadeIn(successModal);
+        setTimeout(() => fadeOut(successModal), 3500);
+    }
 
 });
