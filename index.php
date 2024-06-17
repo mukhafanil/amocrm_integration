@@ -14,13 +14,14 @@
     <main>
         <button class="button open-modal" data-modal="#discountModal">Кликни</button>
 
-        <div class="modal discount" id="discountModal">
-            <button class="modal__close modal-close">
-                <svg class="modal-close__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.00006 1L19 18.9999M18.9999 1L1 18.9999" stroke="#FF1B88" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </button>
-            <div class="modal__container">
+        <div class="modal" id="discountModal">
+            <div class="modal__bg"></div>
+            <div class="modal__container discount">
+                <button class="modal__close modal-close">
+                    <svg class="modal-close__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.00006 1L19 18.9999M18.9999 1L1 18.9999" stroke="#FF1B88" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
                 <div class="discount__header">
                     <div class="modal__title discount__title">
                         <span class="discount__title-text1">Дарим скидку 200 рублей <br></span>
@@ -46,17 +47,25 @@
                                 </div>
                             </div>
                         </div>
+                        <form class="discount__form form" id="discountForm">
+                            <label class="form__label" for="discountPhone">Введи телефон для получения подарка:</label>
+                            <input class="form__input" type="text" name="phone" id="discountPhone">
+                            <button class="form__submit" type="submit">Получить купон на скидку</button>
+
+                            <div class="form__checkbox-wrap">
+                                <input type="checkbox" class="custom-checkbox" id="checkboxPolitics" name="politics" value="yes" checked>
+                                <label for="checkboxPolitics"><span>Я даю согласие на обработку <a href="#" target="_blank">персональных данных</a></span></label>
+                            </div>
+                        </form>
                     </div>
                     <div class="discount__right">
                         <img class="discount__image" src="./inc/img/discount.jpg" alt="discount">
+                        <div class="discount__counter">
+                            <img class="discount__counter-icon" src="./inc/img/people.png" alt="icon">
+                            <span class="discount__counter-text" >Уже получили <span class="discount__counter-value">1033</span></span>
+                        </div>
                     </div>
                 </div>
-
-                <form id="discountForm">
-                    <input type="text" name="phone">
-                    <button type="submit">отправить</button>
-                </form>
-
             </div>
         </div>
     </main>

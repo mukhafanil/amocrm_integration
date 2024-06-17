@@ -3,6 +3,7 @@
 
 * {
     font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
 }
 body {
     font-size: 18px;
@@ -58,11 +59,6 @@ button {
     display: none;
     width: 100%;
     height: 100%;
-    max-width: 400px;
-    max-height: 400px;
-    background: #d5d5d5;
-    color: #333;
-    border-radius: 20px;
 
     margin: auto;
     position: fixed;
@@ -71,6 +67,33 @@ button {
     left: 0;
     right: 0;
 
+    & &__bg {
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.85);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+    & &__container {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 400px;
+        max-height: 400px;
+        background: #d5d5d5;
+        color: #333;
+        border-radius: 20px;
+
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
     & &__close {
         position: absolute;
         top: 14px;
@@ -87,21 +110,19 @@ button {
 .discount {
     width: 100%;
     height: 100%;
-    max-width: 1000px;
-    max-height: 570px;
+    max-width: 1000px !important;
+    max-height: 570px !important;
 
     padding: 33px 48px 37px 43px;
-    background: url("/inc/img/modal-bg.jpg") no-repeat center center;
-    background-size: cover;
+    background: url("/inc/img/modal-bg.jpg") no-repeat center center !important;
+    background-size: cover !important;
 
     & &__title {
         &-text1 {
             color: #924CCE;
         }
     }
-    & &__puncts {
-        margin-top: 24px;
-    }
+    & &__puncts {}
     & &__body {
         display: flex;
         justify-content: flex-start;
@@ -109,8 +130,15 @@ button {
         gap: 43px;
         margin-top: 24px;
     }
-    & &__left {}
+    & &__left {
+        width: 100%;
+    }
     & &__right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
         width: 100%;
         max-width: 413px;
     }
@@ -120,6 +148,35 @@ button {
         height: auto;
         object-fit: contain;
         border-radius: 26px;
+    }
+    & &__counter {
+        margin-top: 14px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 13px;
+
+        width: auto;
+        height: auto;
+        padding: 12px 30px 12px 30px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.5);
+
+        &-icon {
+            display: block;
+            width: 30px;
+            height: 30px;
+        }
+        &-text {
+            font-size: 18px;
+            line-height: 1.666666666666667;
+        }
+        &-value {
+            color: #FF1B88;
+        }
+    }
+    & &__form {
+        margin-top: 30px;
     }
 }
 
@@ -148,4 +205,106 @@ button {
         height: 26px;
     }
     & &__text {}
+}
+
+.form {
+    & &__label {
+        display: block;
+        margin-bottom: 8px;
+        padding-left: 9px;
+    }
+    & &__input {
+        width: 100%;
+        height: auto;
+        padding: 15px 32px;
+
+        background: #fff;
+        border-radius: 40px;
+        outline: none;
+        border: none;
+
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.666666666666667;
+        text-align: left;
+    }
+    & &__submit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        margin-top: 11px;
+        width: 100%;
+        padding: 28px 32px;
+        border-radius: 50px;
+
+        background: linear-gradient(173.7deg, #FF1B88 4.27%, #FF1B88 94.36%),
+                    linear-gradient(173.7deg, #FF409B 4.27%, #F91381 94.36%);
+        box-shadow: 0px 5px 0px 0px #D60669;
+
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.090909090909091;
+        text-align: center;
+        color: #fff;
+    }
+    & &__checkbox-wrap {
+        margin-top: 9px;
+        text-align: center;
+    }
+}
+
+.custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.219166666666667;
+    text-align: left;
+    color: #444444;
+
+    &+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1.2191666667;
+        text-align: left;
+        color: #444444;
+        cursor: pointer;
+
+        a {
+            color: #FF1B88;
+            text-decoration: underline;
+        }
+    }
+    &+label::before {
+        content: '';
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: none;
+        border-radius: 2px;
+        margin-right: 8px;
+        background: #FF1B88;
+    }
+    &:checked+label::before {
+        background: url('/inc/img/check.svg') no-repeat center 40%, #FF1B88;
+    }
+    /* стили при наведении курсора на checkbox */
+    &:not(:disabled):not(:checked)+label:hover::before {}
+    /* стили для активного состояния чекбокса (при нажатии на него) */
+    &:not(:disabled):active+label::before {}
+    /* стили для чекбокса, находящегося в фокусе */
+    &:focus+label::before {}
+    /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+    &:focus:not(:checked)+label::before {}
+    /* стили для чекбокса, находящегося в состоянии disabled */
+    &:disabled+label::before {}
 }

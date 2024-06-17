@@ -1,6 +1,13 @@
 @font-face {
     font-family: "Montserrat", sans-serif;
     font-style: normal;
+    font-weight: 300;
+    src: local("Montserrat"),
+    url("/inc/fonts/montserrat/Montserrat-Light.ttf") format("ttf");
+}
+@font-face {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
     font-weight: 400;
     src: local("Montserrat"),
         url("/inc/fonts/montserrat/Montserrat-Regular.ttf") format("ttf");

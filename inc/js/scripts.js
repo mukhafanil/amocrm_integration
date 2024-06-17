@@ -26,6 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const modalBg = document.querySelectorAll('.modal__bg');
+    modalBg.forEach(function(block) {
+        block.addEventListener('click', function() {
+            flag.toggle(() => {
+                const modal = this.closest('.modal');
+
+                fadeOut(modal);
+            });
+        });
+    });
+
     const discountForm = document.querySelector('#discountForm');
     discountForm.addEventListener('submit', function (event) {
         event.preventDefault();

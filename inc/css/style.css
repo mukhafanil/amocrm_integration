@@ -1,7 +1,9 @@
+@charset "UTF-8";
 @import "reset.css";
 @import "fonts.css";
 * {
   font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -57,17 +59,38 @@ button {
   display: none;
   width: 100%;
   height: 100%;
-  max-width: 400px;
-  max-height: 400px;
-  background: #d5d5d5;
-  color: #333;
-  border-radius: 20px;
   margin: auto;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
+.modal .modal__bg {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.modal .modal__container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  background: #d5d5d5;
+  color: #333;
+  border-radius: 20px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 .modal .modal__close {
   position: absolute;
@@ -84,17 +107,14 @@ button {
 .discount {
   width: 100%;
   height: 100%;
-  max-width: 1000px;
-  max-height: 570px;
+  max-width: 1000px !important;
+  max-height: 570px !important;
   padding: 33px 48px 37px 43px;
-  background: url("/inc/img/modal-bg.jpg") no-repeat center center;
-  background-size: cover;
+  background: url("/inc/img/modal-bg.jpg") no-repeat center center !important;
+  background-size: cover !important;
 }
 .discount .discount__title-text1 {
   color: #924CCE;
-}
-.discount .discount__puncts {
-  margin-top: 24px;
 }
 .discount .discount__body {
   display: flex;
@@ -103,7 +123,15 @@ button {
   gap: 43px;
   margin-top: 24px;
 }
+.discount .discount__left {
+  width: 100%;
+}
 .discount .discount__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
   width: 100%;
   max-width: 413px;
 }
@@ -113,6 +141,33 @@ button {
   height: auto;
   object-fit: contain;
   border-radius: 26px;
+}
+.discount .discount__counter {
+  margin-top: 14px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  width: auto;
+  height: auto;
+  padding: 12px 30px 12px 30px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.5);
+}
+.discount .discount__counter-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+.discount .discount__counter-text {
+  font-size: 18px;
+  line-height: 1.6666666667;
+}
+.discount .discount__counter-value {
+  color: #FF1B88;
+}
+.discount .discount__form {
+  margin-top: 30px;
 }
 
 .puncts {
@@ -137,6 +192,90 @@ button {
   display: block;
   width: 26px;
   height: 26px;
+}
+.form .form__label {
+  display: block;
+  margin-bottom: 8px;
+  padding-left: 9px;
+}
+.form .form__input {
+  width: 100%;
+  height: auto;
+  padding: 15px 32px;
+  background: #fff;
+  border-radius: 40px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6666666667;
+  text-align: left;
+}
+.form .form__submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 11px;
+  width: 100%;
+  padding: 28px 32px;
+  border-radius: 50px;
+  background: linear-gradient(173.7deg, #FF1B88 4.27%, #FF1B88 94.36%), linear-gradient(173.7deg, #FF409B 4.27%, #F91381 94.36%);
+  box-shadow: 0px 5px 0px 0px #D60669;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.0909090909;
+  text-align: center;
+  color: #fff;
+}
+.form .form__checkbox-wrap {
+  margin-top: 9px;
+  text-align: center;
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.2191666667;
+  text-align: left;
+  color: #444444;
+  /* стили при наведении курсора на checkbox */
+  /* стили для активного состояния чекбокса (при нажатии на него) */
+  /* стили для чекбокса, находящегося в фокусе */
+  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+  /* стили для чекбокса, находящегося в состоянии disabled */
+}
+.custom-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.2191666667;
+  text-align: left;
+  color: #444444;
+  cursor: pointer;
+}
+.custom-checkbox + label a {
+  color: #FF1B88;
+  text-decoration: underline;
+}
+.custom-checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: none;
+  border-radius: 2px;
+  margin-right: 8px;
+  background: #FF1B88;
+}
+.custom-checkbox:checked + label::before {
+  background: url("/inc/img/check.svg") no-repeat center 40%, #FF1B88;
 }
 
 /*# sourceMappingURL=style.css.map */
