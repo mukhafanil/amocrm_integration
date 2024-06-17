@@ -24,7 +24,7 @@ try {
     $mail->Port       = 465;
     $mail->setFrom($_ENV['SMTP_LOGIN'], 'Заявка Фаниль Мухамадиев'); // Адрес самой почты и имя отправителя
     // Получатель письма
-    $mail->addAddress('mukhafanil@gmail.com');  // Ещё один, если нужен
+    $mail->addAddress('order@salesgenerator.pro');  // Ещё один, если нужен
 
     // -----------------------
     // Само письмо
