@@ -5,6 +5,9 @@ use PHPMailer\PHPMailer\Exception;
 
 require_once __DIR__.'/../../vendor/autoload.php';
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 $phone = $_POST['phone'];
 $site = $_SERVER['HTTP_HOST'];
 
@@ -14,12 +17,12 @@ try {
     $mail->CharSet = "UTF-8";
     $mail->SMTPAuth   = true;
     // Настройки вашей почты
-    $mail->Host       = 'smtp.yandex.ru'; // SMTP сервера GMAIL
-    $mail->Username   = 'mushafanil@yandex.ru'; // Логин на почте
-    $mail->Password   = 'qqlovyfcgwpoyihx'; // Пароль на почте
+    $mail->Host       = $_ENV['SMTP_DOMAIN']; // SMTP сервера GMAIL
+    $mail->Username   = $_ENV['SMTP_LOGIN']; // Логин на почте
+    $mail->Password   = $_ENV['SMTP_PASS']; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('mushafanil@yandex.ru', 'Заявка Фаниль Мухамадиев'); // Адрес самой почты и имя отправителя
+    $mail->setFrom($_ENV['SMTP_LOGIN'], 'Заявка Фаниль Мухамадиев'); // Адрес самой почты и имя отправителя
     // Получатель письма
     $mail->addAddress('mukhafanil@gmail.com');  // Ещё один, если нужен
 
