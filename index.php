@@ -49,7 +49,7 @@
                         </div>
                         <form class="discount__form form" id="discountForm">
                             <label class="form__label" for="discountPhone">Введи телефон для получения подарка:</label>
-                            <input class="form__input" type="text" name="phone" id="discountPhone">
+                            <input class="form__input" type="text" name="phone" id="discountPhone" placeholder="+7 (000) 000-00-00" required>
                             <button class="form__submit" type="submit">Получить купон на скидку</button>
 
                             <div class="form__checkbox-wrap">

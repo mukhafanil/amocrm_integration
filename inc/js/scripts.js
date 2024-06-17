@@ -1,7 +1,23 @@
+import Inputmask from "./inputmask.es6.js";
 import {Flag, fadeIn, fadeOut} from './utilities.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const flag = new Flag();
+
+    setPhoneMask();
+
+    function setPhoneMask() {
+        let inputPhone = document.querySelector('#discountPhone');
+        let im = new Inputmask("+7 (999) 999-99-99", {
+            oncomplete: function() {
+                inputPhone.setCustomValidity('');
+            },
+            onincomplete: function() {
+                inputPhone.setCustomValidity('Введите полный номер телефона');
+            }
+        });
+        im.mask(inputPhone);
+    }
 
     const openModalButtons = document.querySelectorAll('.open-modal');
     openModalButtons.forEach(function(button) {
