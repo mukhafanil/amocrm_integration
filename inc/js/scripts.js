@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Ошибка:', error));
 
         // Отправка в AmoCRM (главная, поэтому вывожу модалку успешной отправки)
-        /*fetch('/src/Api/sendToAmoCRM.php', {
+        fetch('/src/Api/sendToAmoCRM.php', {
             method: 'POST',
             body: formData
         })
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log('Ошибка при отправке лида в AmoCRM.', data);
                 }
             })
-            .catch(error => console.error('Ошибка:', error));*/
+            .catch(error => console.error('Ошибка:', error));
     });
 
     function resultSuccess() {
