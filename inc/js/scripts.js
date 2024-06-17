@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const modalSelector = this.dataset.modal;
                 const modal = document.querySelector(modalSelector);
 
-                fadeIn(modal, 'block');
+                fadeIn(modal, 'flex');
             });
         });
     });
@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const discountModal = document.querySelector('#discountModal');
         setTimeout(() => fadeOut(discountModal), 200);
 
-        const successModal = document.querySelector('#successForm');
-        fadeIn(successModal);
+        const successModal = document.querySelector('#successModal');
+        fadeIn(successModal, 'flex');
         setTimeout(() => fadeOut(successModal), 3500);
     }
 

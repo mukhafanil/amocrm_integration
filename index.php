@@ -69,15 +69,15 @@
             </div>
         </div>
 
-        <div class="modal" id="successForm">
+        <div class="modal" id="successModal">
             <div class="modal__bg"></div>
-            <div class="modal__container success-form">
+            <div class="modal__container success-modal">
                 <button class="modal__close modal-close">
                     <svg class="modal-close__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.00006 1L19 18.9999M18.9999 1L1 18.9999" stroke="#FF1B88" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </button>
-                <div class="modal__title success-form__title">
+                <div class="modal__title success-modal__title">
                     Заявка успешно отправлена!
                 </div>
             </div>
