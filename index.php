@@ -1,8 +1,3 @@
-<?php
-    require_once('./vendor/autoload.php');
-    //require_once('./src/api/sendToAmoCRM.php');
-?>
-
 <!doctype html>
 <html lang="ru">
 <head>
@@ -57,7 +52,7 @@
                     </div>
                 </div>
 
-                <form>
+                <form id="discountForm">
                     <input type="text" name="phone">
                     <button type="submit">отправить</button>
                 </form>

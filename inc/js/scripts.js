@@ -26,4 +26,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const discountForm = document.querySelector('#discountForm');
+    discountForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+
+        fetch('/src/Api/sendToAmoCRM.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Лид успешно отправлен!');
+                } else {
+                    console.log('Ошибка при отправке лида.', data);
+                }
+            })
+            .catch(error => console.error('Ошибка:', error));
+    });
+
 });
