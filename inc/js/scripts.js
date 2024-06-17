@@ -59,6 +59,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const formData = new FormData(this);
 
+        // Отправка на почту
+        fetch('/src/Api/sendToMail.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Заявка успешно отправлена на почту!');
+                } else {
+                    console.log('Ошибка при отправке заявки на почту.', data);
+                }
+            })
+            .catch(error => console.error('Ошибка:', error));
+
+        // Отправка в AmoCRM (главная, поэтому вывожу модалку успешной отправки)
         fetch('/src/Api/sendToAmoCRM.php', {
             method: 'POST',
             body: formData
@@ -66,10 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    console.log('Лид успешно отправлен!');
+                    console.log('Лид успешно отправлен в AmoCRM!');
                     resultSuccess();
                 } else {
-                    console.log('Ошибка при отправке лида.', data);
+                    console.log('Ошибка при отправке лида в AmoCRM.', data);
                 }
             })
             .catch(error => console.error('Ошибка:', error));
